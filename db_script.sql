@@ -44,6 +44,6 @@ CREATE TABLE payment_details (
   payment_number INT PRIMARY KEY,
   booking_number INT NOT NULL,
   payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  price DOUBLE(5,2) NOT NULL,
+  amount DOUBLE(5,2) NOT NULL,
   foreign key(booking_number) references booking_details(booking_number)
 );
