@@ -47,3 +47,12 @@ CREATE TABLE payment_details (
   amount DOUBLE(5,2) NOT NULL,
   foreign key(booking_number) references booking_details(booking_number)
 );
+
+
+CREATE TABLE payment_status (
+  status_id INT PRIMARY KEY,
+  payment_number INT NOT NULL,
+  payment_status VARCHAR(50) NOT NULL,
+  created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  foreign key(payment_number) references payment_details(payment_number)
+);
