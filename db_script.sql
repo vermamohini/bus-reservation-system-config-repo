@@ -56,3 +56,12 @@ CREATE TABLE payment_status (
   created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   foreign key(payment_number) references payment_details(payment_number)
 );
+
+CREATE TABLE inventory_update_log (
+  log_id INT PRIMARY KEY,
+  booking_number INT NOT NULL,
+  no_of_seats INT NOT NULL,
+  operation VARCHAR(50) NOT NULL,
+  created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  foreign key(booking_number) references booking_details(booking_number)
+);
